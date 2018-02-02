@@ -1,6 +1,9 @@
 FROM ruby:2.5.0
 
 ENV APP_ROOT /spgm
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get update -qq && apt-get install -y --no-install-recommends apt-utils
 
 RUN apt-get update -qq && apt-get install -y nodejs  build-essential libpq-dev postgresql-client
 
