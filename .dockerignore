@@ -1,0 +1,22 @@
+## git
+.git/*
+.gitignore
+
+## Rails
+public/assets/*
+.ruby-version
+.env
+
+## Envirenment normalisation:
+
+
+## log
+log/*
+tmp/*
+
+## OSX
+.DS_Store
+
+## docker
+.dockerignore
+

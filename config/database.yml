@@ -9,25 +9,27 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
+  port: <%= ENV.fetch('DATABASE_PORT') { 5432 } %>
+  host: <%= ENV.fetch('DATABASE_HOST') { 'db' } %>
 
 development:
   <<: *default
-  database: spgm_develop
-  username: pgms
-  password: pgms
+  database: spgm_dev
+  username: spgm
+  password: spgm
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: spgm_test
-  username: pgms
-  password: pgms
+  database: spgm_dev
+  username: spgm
+  password: spgm
 
 production:
   <<: *default
-  database: spgm
-  username: pgms
-  password: pgms
+  database: spgm_dev
+  username: spgm
+  password: spgm
 
